@@ -285,6 +285,10 @@ int main(int argc, char* argv[]) {
 	date.tm_wday = timeinfo->tm_wday;
 	date.tm_mon =  timeinfo->tm_mon + 1;
 	date.tm_year = timeinfo->tm_year - 100;
+	date.tm_hour = timeinfo->tm_hour;
+	date.tm_min = timeinfo->tm_min;
+    	date.tm_sec = timeinfo->tm_sec; 
+
 	writeRTCDate(date);
 
 	if (wiringPiSPISetupMode (0, 500000, 3)) { // 1 - Arduino Photo, 3 - Production
